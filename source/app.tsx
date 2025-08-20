@@ -3,7 +3,11 @@ import {Menu} from './Menu.js';
 import {Box, Text} from 'ink';
 
 type Props = {
-	name: string | undefined;
+	kindleIpAddress: string | undefined;
+	kindleSSHPort: string | undefined;
+	kindleSshUser: string | undefined;
+	kindleSshPassword: string | undefined;
+	copyClippingsTo: string | undefined;
 };
 
 process.stdout.write('\x1Bc');

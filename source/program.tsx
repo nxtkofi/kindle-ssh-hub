@@ -42,5 +42,12 @@ const cli = meow(
 	},
 );
 
-
-render(<App name={cli.flags.name} />);
+render(
+	<App
+		kindleIpAddress={cli.flags.kindleIpAddress}
+		kindleSSHPort={cli.flags.kindleSshPort}
+		kindleSshUser={cli.flags.kindleSshUser}
+		kindleSshPassword={cli.flags.kindleSshPassword}
+		copyClippingsTo={cli.flags.copyClippingsTo}
+	/>,
+);
