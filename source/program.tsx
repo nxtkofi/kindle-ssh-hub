@@ -19,9 +19,6 @@ const cli = meow(
 	{
 		importMeta: import.meta,
 		flags: {
-			name: {
-				type: 'string',
-			},
 			kindle_ip_address: {
 				type: 'string',
 			},

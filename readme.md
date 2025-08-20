@@ -17,9 +17,14 @@ $ kindle-ssh-hub --help
     $ kindle-ssh-hub
 
   Options
-    --name  Your name
+    --kindle_ip_address <required> e.g "192.168.8.40"
+    --kindle_ssh_port <optional, default 2222> e.g 1234
+    --kindle_ssh_user <optional, default root> e.g user_name
+    --kindle_ssh_password <optional>
+    --copy_clippings_to <required, default "~/Downloads/" e.g
+"~/my/path/to/clippings"
 
   Examples
-    $ kindle-ssh-hub --name=Jane
-    Hello, Jane
+    $ kindle-ssh-hub --kindle_ip_address "192.168.8.40" --copy_clippings_to
+"~/Downloads"
 ```
