@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Box, Text} from 'ink';
 import {type ReactElement, type ReactNode} from 'react';
 import {SelectInput} from './SelectInput.js';
 import {appOptions} from './constants.js';
 import {AppOptionsType} from './types.js';
-import {performAction} from './scripts/performAction.js';
+import {UpdateClippingsPage} from './pages/UpdateClippingsPage.js';
 
 export interface MenuProps {
 	children: ReactNode;
@@ -15,10 +15,6 @@ export function Menu(): ReactElement {
 	const [menuOption, setMenuOption] = useState<AppOptionsType | undefined>(
 		undefined,
 	);
-
-	useEffect(() => {
-		menuOption !== undefined && performAction(menuOption);
-	}, [menuOption]);
 
 	return (
 		<>
@@ -32,17 +28,20 @@ export function Menu(): ReactElement {
 				/>
 			) : (
 				<Box flexDirection="row" alignItems="center">
-					<Text>You chose</Text>
+					<Text >You chose</Text>
 					<Box
 						borderStyle="round"
 						borderColor="green"
 						paddingX={1}
 						marginLeft={1}
 					>
-						<Text color={'green'}>{menuOption}</Text>
+						<Text color={'red'}>{menuOption}</Text>
 					</Box>
 				</Box>
 			)}
+			{menuOption !== undefined && menuOption == 'Update clippings' ? (
+				<UpdateClippingsPage />
+			) : null}
 		</>
 	);
 }

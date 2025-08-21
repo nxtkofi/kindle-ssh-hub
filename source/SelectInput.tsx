@@ -43,7 +43,7 @@ export function SelectInput(props: SelectInputProps) {
 							aria-role="listitem"
 							aria-state={{selected: isSelected}}
 						>
-							<Text color={isSelected ? 'blue' : undefined}>{label}</Text>
+							<Text color={isSelected ? 'blueBright' : undefined}>{label}</Text>
 						</Box>
 					);
 				})}
